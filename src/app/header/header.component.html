@@ -1,3 +1,13 @@
-<p>
-  header works!
-</p>
+<div class="header-wrapper">
+  <a class="mock-header" href="#">
+    <span class="header-image">
+        <img src="../../assets/klm-head.png" alt="KLM">
+    </span>
+    <span class="header-title">Royal Dutch Airlines</span>
+  </a>
+  <div class="toggle-wrapper">
+    <span [class.theme-selected]='blueThemeSelectedFlag' (click)='setTheme(blueTheme)'></span>
+    <span [class.theme-selected]='!blueThemeSelectedFlag' (click)='setTheme(whiteTheme)'></span>
+  </div>
+</div>
+
