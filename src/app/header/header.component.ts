@@ -22,6 +22,6 @@ export class HeaderComponent implements OnInit {
     this.selectedTheme = themeName;
     this.toggleTheme.emit(themeName);
     this.blueThemeSelectedFlag = !this.blueThemeSelectedFlag;
-   }
+    }
   }
 }

@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CarouselComponent } from './carousel.component';
+import { CarouselModel } from './carousel.model';
 
-describe('CarouselComponent', () => {
+fdescribe('CarouselComponent', () => {
   let component: CarouselComponent;
   let fixture: ComponentFixture<CarouselComponent>;
 
@@ -22,4 +23,38 @@ describe('CarouselComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  const dummyDataList: Array<CarouselModel> =  [
+    { 'src': '', title: 'A', description: '' },
+    { 'src': '', title: 'B', description: '' }
+  ];
+
+  it('should increment the count by one', () => {
+    component.carouselDataList = dummyDataList;
+    component.currentIndex = 0;
+    component.showNext(true);
+    expect(component.currentIndex).toEqual(1);
+  });
+
+  it('should decrement the count by one', () => {
+    component.carouselDataList = dummyDataList;
+    component.currentIndex = 1;
+    component.showNext(false);
+    expect(component.currentIndex).toEqual(0);
+  });
+
+  it('should set the current index back to 0', () => {
+    component.carouselDataList = dummyDataList;
+    component.currentIndex = 1;
+    component.showNext(true);
+    expect(component.currentIndex).toEqual(0);
+  });
+
+  it('should set the current index to the index of last data', () => {
+    component.carouselDataList = dummyDataList;
+    component.currentIndex = 0;
+    component.showNext(false);
+    expect(component.currentIndex).toEqual(1);
+  });
+
 });

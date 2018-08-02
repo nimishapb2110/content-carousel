@@ -1,14 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { HomeComponent } from './home.component';
+import { DestinationService } from '../shared/destination.service';
+import { CarouselComponent } from '../carousel/carousel.component';
 
-describe('HomeComponent', () => {
+fdescribe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
+  
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent, CarouselComponent ],
+      imports:[HttpClientModule],
+      providers:[
+        DestinationService,
+        HttpClient
+      ]
     })
     .compileComponents();
   }));
