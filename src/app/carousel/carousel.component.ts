@@ -10,17 +10,14 @@ export class CarouselComponent implements OnInit, OnChanges {
   @Input() carouselDataList: Array<CarouselModel>;
   currentIndex = 0;
   currentSelection: CarouselModel;
-  constructor() { 
-   
-  }
+  constructor() { }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() { }
 
-  ngOnChanges(){
-    if(this.carouselDataList)
+  ngOnChanges() {
+    if (this.carouselDataList) {
       this.currentSelection = this.carouselDataList[this.currentIndex];
+    }
   }
 
   showNext(nextFlag: boolean) {
