@@ -12,7 +12,9 @@ export class HomeComponent implements OnInit {
   constructor( private destinationService: DestinationService ) { }
 
   ngOnInit() {
-    this.carouselDataList = this.destinationService.getDestinationList();
+    this.destinationService.getDestinationList()
+    .subscribe((data: Array<CarouselModel>) => {
+      this.carouselDataList = data;
+  });
   }
-
 }

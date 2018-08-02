@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { CarouselModel } from './carousel.model';
 
 @Component({
@@ -6,14 +6,21 @@ import { CarouselModel } from './carousel.model';
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent implements OnInit {
+export class CarouselComponent implements OnInit, OnChanges {
   @Input() carouselDataList: Array<CarouselModel>;
   currentIndex = 0;
   currentSelection: CarouselModel;
-  constructor() { }
+  constructor() { 
+   
+  }
 
   ngOnInit() {
-    this.currentSelection = this.carouselDataList[this.currentIndex];
+    
+  }
+
+  ngOnChanges(){
+    if(this.carouselDataList)
+      this.currentSelection = this.carouselDataList[this.currentIndex];
   }
 
   showNext(nextFlag: boolean) {

@@ -33,10 +33,11 @@
 .indicator-left{
     position: absolute;
     top: 50%;
+    left: 10px;
 }
 .indicator-right{
     position: absolute;
-    right: 0;
+    right: 10px;
     top: 50%;
 }
 .carousel-image{
@@ -99,15 +100,23 @@
 .selected-indicator{
     background: #00a1de;
 }
-.indicator-arrow{
+/*.indicator-arrow{
     color: white;
     cursor: pointer;
+}*/
+.indicator-arrow{
+    position: absolute;
+    content: "";
+    padding: 13px;
+    box-shadow: 2px -2px 0 1px #ffffff inset;
+    border: solid transparent;
+    border-width: 0 0 2rem 2rem;
+    transform: rotate(45deg);
+    margin: -4px 0 0 -30px;
 }
-
-.image-hidden{
-    display: none;
+.right-arrow{
+    transform: rotate(225deg);
 }
-
 .read-more{
     flex-grow: 1;
     flex-basis: 0;

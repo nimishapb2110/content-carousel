@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CarouselModel } from '../carousel/carousel.model';
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +14,9 @@ export class DestinationService {
         { 'src': '../../assets/soci5.png', title: 'Some Title', description: 'Sample 5' }
       ];
 
-  constructor( ) { }
+  constructor( private http: HttpClient ) { }
+
   getDestinationList() {
-  //  this.temp = this.http.get<CarouselModel>('../../mock/destinations.json');
-      return this.slides;
+    return this.http.get<Array<CarouselModel>>('../../assets/mock/destinations.json');
   }
 }

@@ -1,14 +1,14 @@
 <div id="carousel" class="carousel-container">
-    <div class="carousel-wrapper">
+    <div class="carousel-wrapper" *ngIf="currentSelection">
       <div class="carousel-image-wrapper">
         <div class="carousel-image-inline">
           <img class="carousel-image" src="{{currentSelection.src}}">
           <div class="indicator-wrapper">
               <div class="indicator-left">
-                  <i class="fa fa-chevron-left indicator-arrow" (click)="showNext(false)"></i>
-                </div>
+                <span class="indicator-arrow" (click)="showNext(false)"></span>
+              </div>
               <div class="indicator-right">
-                <i class="fa fa-chevron-right indicator-arrow" (click)="showNext(true)"></i>
+                <span class="indicator-arrow right-arrow" (click)="showNext(true)"></span>
               </div>
           </div>
         </div>
