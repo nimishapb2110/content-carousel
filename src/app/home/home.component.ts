@@ -14,15 +14,5 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.destinationListObservable = this.destinationService.getDestinationList();
-
-    /*  .subscribe(( data: Array<CarouselModel> ) => {
-        this.carouselDataList = data;
-        this.destinationData.next(data);
-      });*/
-
-     /* this.destinationListSub = this.destinationService.getDestinationUpdatedListener()
-        .subscribe(( data: Array<CarouselModel> ) => {
-          this.carouselDataList = data;
-      });*/
   }
 }
