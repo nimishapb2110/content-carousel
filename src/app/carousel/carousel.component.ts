@@ -13,7 +13,7 @@ export class CarouselComponent implements OnInit {
   currentIndex = 0;
   currentSelection: CarouselModel;
   ngOnInit() {
-    this.carouselDataListObs.subscribe(( data: Array<CarouselModel> ) => {
+      this.carouselDataListObs.subscribe(( data: Array<CarouselModel> ) => {
       this.carouselDataList = data;
       this.currentSelection = data ? data[ this.currentIndex ] : null;
     });
