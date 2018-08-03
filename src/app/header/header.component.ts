@@ -6,7 +6,6 @@ import { blueTheme, whiteTheme } from '../shared/theme.model';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  selectedTheme = 'blue';
   blueThemeSelectedFlag = true;
 
   setBlueTheme() {

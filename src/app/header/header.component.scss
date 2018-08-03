@@ -37,17 +37,19 @@
         height: 17px;
         padding-left: 4px;
         margin: -5px 4px 0 4px;
-        border: 1px solid $primary-grey;
         border-radius: 50%;
         font-size: 11px;
-        &:first-child{
-            background-color: $secondary-blue;
-            border: 1px solid $secondary-blue;
-        }
     }
-}
-.theme-selected{
-    border: 2px solid $primary-blue !important;
+    .blue-toggle{
+        background-color: $secondary-blue;
+        border: 1px solid $secondary-blue;
+    }
+    .white-toggle{
+        border: 1px solid $primary-grey;
+    }
+    .theme-selected{
+        border: 2px solid $primary-blue;
+    }
 }
 @media only screen and (max-width: 480px) {
     .toggle-wrapper{
