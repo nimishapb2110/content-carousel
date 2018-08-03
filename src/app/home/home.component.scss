@@ -1,10 +1,10 @@
+@import '../shared/shared-style.scss';
 .home-container{
     display: flex;
     flex-direction: column;
     height: 98%;
-    margin-top: 70px;
     >h2{
-        color: #0780b1;
+        color: $primary-blue;
         font-weight: normal;
         font-size: 30px;
         margin: 15px 10px;

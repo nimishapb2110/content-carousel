@@ -32,28 +32,28 @@ fdescribe('CarouselComponent', () => {
   it('should increment the count by one', () => {
     component.carouselDataList = dummyDataList;
     component.currentIndex = 0;
-    component.showNext(true);
+    component.showNext();
     expect(component.currentIndex).toEqual(1);
   });
 
   it('should decrement the count by one', () => {
     component.carouselDataList = dummyDataList;
     component.currentIndex = 1;
-    component.showNext(false);
+    component.showNext();
     expect(component.currentIndex).toEqual(0);
   });
 
   it('should set the current index back to 0', () => {
     component.carouselDataList = dummyDataList;
     component.currentIndex = 1;
-    component.showNext(true);
+    component.showPrevious();
     expect(component.currentIndex).toEqual(0);
   });
 
   it('should set the current index to the index of last data', () => {
     component.carouselDataList = dummyDataList;
     component.currentIndex = 0;
-    component.showNext(false);
+    component.showPrevious();
     expect(component.currentIndex).toEqual(1);
   });
 

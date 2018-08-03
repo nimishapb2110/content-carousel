@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DestinationService } from '../shared/destination.service';
 import { CarouselModel } from '../carousel/carousel.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +9,20 @@ import { CarouselModel } from '../carousel/carousel.model';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  carouselDataList: Array<CarouselModel>;
-  constructor( private destinationService: DestinationService ) { }
+  destinationListObservable: Observable<Array<CarouselModel>>;
+  constructor(private destinationService: DestinationService) { }
 
   ngOnInit() {
-    this.destinationService.getDestinationList()
-    .subscribe((data: Array<CarouselModel>) => {
-      this.carouselDataList = data;
-  });
+    this.destinationListObservable = this.destinationService.getDestinationList();
+
+    /*  .subscribe(( data: Array<CarouselModel> ) => {
+        this.carouselDataList = data;
+        this.destinationData.next(data);
+      });*/
+
+     /* this.destinationListSub = this.destinationService.getDestinationUpdatedListener()
+        .subscribe(( data: Array<CarouselModel> ) => {
+          this.carouselDataList = data;
+      });*/
   }
 }

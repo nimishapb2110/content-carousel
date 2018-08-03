@@ -1,31 +1,33 @@
-<div id="carousel" class="carousel-container">
-    <div class="carousel-wrapper" *ngIf="currentSelection">
-      <div class="carousel-image-wrapper">
-        <div class="carousel-image-inline">
-          <img class="carousel-image" src="{{currentSelection.src}}">
-          <div class="indicator-wrapper">
-              <div class="indicator-left">
-                <span class="indicator-arrow" (click)="showNext(false)"></span>
-              </div>
-              <div class="indicator-right">
-                <span class="indicator-arrow right-arrow" (click)="showNext(true)"></span>
-              </div>
+<div *ngIf="currentSelection" class="carousel-container">
+  <div class="carousel-wrapper">
+    <div class="carousel-image-wrapper">
+      <div class="carousel-image-inline">
+        <img class="carousel-image" src="{{currentSelection.src}}">
+        <div>
+          <div class="indicator-left">
+            <span class="indicator-arrow" (click)="showPrevious()"></span>
           </div>
-        </div>
-        <div class="carousel-indicator-container">
-          <div class="carousel-indicator-wrapper">
-              <span *ngFor="let item of carouselDataList" [class.selected-indicator]="item.src===currentSelection.src" class="carousel-indicator"></span>
+          <div class="indicator-right">
+            <span class="indicator-arrow right-arrow" (click)="showNext()"></span>
           </div>
         </div>
       </div>
-      <div class="carousel-content-wrapper">
-        <div class="carousel-content">
-          <h1>{{currentSelection.title}}</h1>
-          <p>{{currentSelection.description}}</p>
-          <div class="read-more">
-            <a href="#">Read more<i class="fa fa-chevron-right"></i></a>
-          </div>
+      <div class="carousel-indicator-container">
+        <div class="carousel-indicator-wrapper">
+          <span *ngFor="let item of carouselDataList" class="carousel-indicator" [class.selected-indicator]="item.src===currentSelection.src"></span>
         </div>
       </div>
     </div>
+    <div class="carousel-content-wrapper">
+      <div class="carousel-content">
+        <h1>{{currentSelection.title}}</h1>
+        <p>{{currentSelection.description}}</p>
+        <div class="read-more">
+          <a href="#">Read more
+            <i class="fa fa-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

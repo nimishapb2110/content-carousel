@@ -8,13 +8,11 @@ import { CarouselComponent } from '../carousel/carousel.component';
 fdescribe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
-  
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HomeComponent, CarouselComponent ],
-      imports:[HttpClientModule],
-      providers:[
+      imports: [ HttpClientModule ],
+      providers: [
         DestinationService,
         HttpClient
       ]

@@ -1,27 +1,23 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Theme, blueTheme, whiteTheme } from '../shared/theme.model';
-
+import { Component } from '@angular/core';
+import { blueTheme, whiteTheme } from '../shared/theme.model';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-  @Output() toggleTheme = new EventEmitter<Theme>();
-  blueTheme: Theme = blueTheme;
-  whiteTheme: Theme = whiteTheme;
-  selectedTheme: Theme = blueTheme;
+export class HeaderComponent {
+  selectedTheme = 'blue';
   blueThemeSelectedFlag = true;
-  constructor() { }
 
-  ngOnInit() {
+  setBlueTheme() {
+    document.documentElement.style.setProperty('--primary', blueTheme.primary);
+    document.documentElement.style.setProperty('--accent', blueTheme.primary);
+    this.blueThemeSelectedFlag = true;
   }
 
-  setTheme( themeName: Theme ) {
-   if ( this.selectedTheme !== themeName ) {
-    this.selectedTheme = themeName;
-    this.toggleTheme.emit(themeName);
-    this.blueThemeSelectedFlag = !this.blueThemeSelectedFlag;
-    }
+  setWhiteTheme() {
+    document.documentElement.style.setProperty('--primary', whiteTheme.primary);
+    document.documentElement.style.setProperty('--accent', whiteTheme.accent);
+    this.blueThemeSelectedFlag = false;
   }
 }

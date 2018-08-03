@@ -1,31 +1,28 @@
+@import '../shared/shared-style.scss';
 .header-wrapper{
-    position: absolute;
-    left: 0;
-    margin: 10px;
-    top: 0;
-    padding: 0;
+    position: relative;
     width: 90%;
+    height: 10%;
     display: flex;
     flex-direction: row;
     .mock-header{
         margin: 10px;
         flex-grow: 1;
+        text-decoration: none;
         .header-image{
-            position: absolute;
-            height: 49px;
+            position: relative;
+            float: left;
             width: 72px;
             >img{
-                position: absolute;
                 height: 100%;
                 width: 100%;
             }
         }
         .header-title{
             margin: 10px;
-            color: #00a1de;
-            font-family: -apple-system,system-ui,"Segoe UI",Roboto,sans-serif;
-            left: 85px;
-            position: absolute;
+            color: $primary-blue;
+            left: 0;
+            position: relative;
             top: 25px;
         }
     }
@@ -40,19 +37,18 @@
         height: 17px;
         padding-left: 4px;
         margin: -5px 4px 0 4px;
-        border: 1px solid #C4C4C4;
+        border: 1px solid $primary-grey;
         border-radius: 50%;
         font-size: 11px;
         &:first-child{
-            background-color: #003145;
-            border: 1px solid #003145;
+            background-color: $secondary-blue;
+            border: 1px solid $secondary-blue;
         }
     }
 }
 .theme-selected{
-    border: 2px solid #00a1de !important;
+    border: 2px solid $primary-blue !important;
 }
-
 @media only screen and (max-width: 480px) {
     .toggle-wrapper{
         display: none;

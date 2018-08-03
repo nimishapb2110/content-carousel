@@ -1,13 +1,13 @@
 <div class="header-wrapper">
   <a class="mock-header" href="#">
     <span class="header-image">
-        <img src="../../assets/klm-head.png" alt="KLM">
+        <img src="../../assets/images/klm-head.png" alt="KLM">
     </span>
     <span class="header-title">Royal Dutch Airlines</span>
   </a>
   <div class="toggle-wrapper">
-    <span title="Choose theme" [class.theme-selected]="blueThemeSelectedFlag" (click)="setTheme(blueTheme)"></span>
-    <span title="Choose theme" [class.theme-selected]="!blueThemeSelectedFlag" (click)="setTheme(whiteTheme)"></span>
+    <span title="Choose theme" [class.theme-selected]="blueThemeSelectedFlag" (click)="setBlueTheme()"></span>
+    <span title="Choose theme" [class.theme-selected]="!blueThemeSelectedFlag" (click)="setWhiteTheme()"></span>
   </div>
 </div>
 

@@ -1,26 +1,26 @@
 [
   {
-    "src": "../../assets/images/soci1.png",
+    "src": "../../assets/images/destination1.png",
     "title": "Destination A",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   },
   {
-    "src": "../../assets/images/soci2.png",
+    "src": "../../assets/images/destination2.png",
     "title": "Destination B",
     "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
   {
-    "src": "../../assets/images/soci3.png",
+    "src": "../../assets/images/destination3.png",
     "title": "Destination C",
     "description": "Sample description for C"
   },
   {
-    "src": "../../assets/images/soci4.png",
+    "src": "../../assets/images/destination4.png",
     "title": "Destination D",
     "description": "Sample description for D"
   },
   {
-    "src": "../../assets/images/soci5.png",
+    "src": "../../assets/images/destination5.png",
     "title": "Destination E",
     "description": "Sample description for E"
   }
