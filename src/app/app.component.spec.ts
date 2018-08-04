@@ -6,7 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { CarouselComponent } from './carousel/carousel.component';
 
-fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [

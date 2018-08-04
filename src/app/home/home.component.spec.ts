@@ -5,7 +5,7 @@ import { HomeComponent } from './home.component';
 import { DestinationService } from '../shared/destination.service';
 import { CarouselComponent } from '../carousel/carousel.component';
 
-fdescribe('HomeComponent', () => {
+describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
   beforeEach(async(() => {
