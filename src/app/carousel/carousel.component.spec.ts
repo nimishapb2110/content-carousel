@@ -21,7 +21,7 @@ describe('CarouselComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CarouselComponent);
     component = fixture.componentInstance;
-    const destinationObservable: Observable<Array<CarouselModel>> = of(dummyDataList) ;
+    const destinationObservable: Observable<Array<CarouselModel>> = of(dummyDataList);
     component.carouselDataListObs = destinationObservable;
     fixture.detectChanges();
   });
