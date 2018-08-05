@@ -1,22 +1,27 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { CarouselModel } from './carousel.model';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent implements OnInit {
-  @Input() carouselDataListObs: Observable<Array<CarouselModel>>;
-  carouselDataList: Array<CarouselModel>;
+export class CarouselComponent implements OnInit, OnDestroy {
+  @Input() carouselDataList$: Observable<CarouselModel[]>;
+  @Input() blueThemeSelectedFlag: boolean;
+  private carouselDataListener: Subscription;
+  carouselDataList: CarouselModel[];
   currentIndex = 0;
   currentSelection: CarouselModel;
   ngOnInit() {
-      this.carouselDataListObs.subscribe(( data: Array<CarouselModel> ) => {
+    this.carouselDataListener = this.carouselDataList$.subscribe((data: CarouselModel[]) => {
       this.carouselDataList = data;
-      this.currentSelection = data ? data[ this.currentIndex ] : null;
+      this.currentSelection = data ? data[this.currentIndex] : null;
     });
+  }
+  ngOnDestroy() {
+    this.carouselDataListener.unsubscribe();
   }
   showPrevious() {
     if (this.currentIndex === 0) {

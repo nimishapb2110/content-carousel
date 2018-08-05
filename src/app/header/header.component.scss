@@ -51,6 +51,9 @@
         border: 2px solid $primary-blue;
     }
 }
+.white-theme{
+    --primary: red;
+}
 @media only screen and (max-width: 480px) {
     .toggle-wrapper{
         display: none;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DestinationService } from '../shared/destination.service';
 import { CarouselModel } from '../carousel/carousel.model';
 import { Observable } from 'rxjs';
@@ -9,7 +9,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  destinationListObservable: Observable<Array<CarouselModel>>;
+  @Input() blueThemeSelectedFlag;
+  destinationListObservable: Observable<CarouselModel[]>;
   constructor(private destinationService: DestinationService) { }
 
   ngOnInit() {

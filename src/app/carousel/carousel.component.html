@@ -1,10 +1,11 @@
-<div *ngIf="currentSelection" class="carousel-container">
+<div *ngIf="currentSelection" class="carousel-container" [ngClass]="blueThemeSelectedFlag ? 'blue-theme' : 'white-theme'">
   <div class="carousel-wrapper">
     <div class="carousel-image-wrapper">
       <div class="carousel-image-inline">
-        <img class="carousel-image" src="{{currentSelection.src}}">
+        <img class="carousel-image" [src]="currentSelection.src">
         <div>
           <div class="indicator-left">
+              <!--<i class="fa fa-angle-left indicator-arrow" (click)="showPrevious()"></i>-->
             <span class="indicator-arrow" (click)="showPrevious()"></span>
           </div>
           <div class="indicator-right">

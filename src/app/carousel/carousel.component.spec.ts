@@ -13,7 +13,7 @@ describe('CarouselComponent', () => {
     .compileComponents();
   }));
 
-  const dummyDataList: Array<CarouselModel> =  [
+  const dummyDataList: CarouselModel[] =  [
     { 'src': 'destination1.png', title: 'Destination A', description: 'Sample description A' },
     { 'src': 'destination2.png', title: 'Destination B', description: 'Sample description B' }
   ];
@@ -21,8 +21,8 @@ describe('CarouselComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CarouselComponent);
     component = fixture.componentInstance;
-    const destinationObservable: Observable<Array<CarouselModel>> = of(dummyDataList);
-    component.carouselDataListObs = destinationObservable;
+    const destinationObservable: Observable<CarouselModel[]> = of(dummyDataList);
+    component.carouselDataList$ = destinationObservable;
     fixture.detectChanges();
   });
 

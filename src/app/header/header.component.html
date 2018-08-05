@@ -6,8 +6,8 @@
     <span class="header-title">Royal Dutch Airlines</span>
   </a>
   <div title="Choose theme" class="toggle-wrapper">
-    <span class="blue-toggle" [class.theme-selected]="blueThemeSelectedFlag" (click)="setBlueTheme()"></span>
-    <span class="white-toggle" [class.theme-selected]="!blueThemeSelectedFlag" (click)="setWhiteTheme()"></span>
+    <span class="blue-toggle" [class.theme-selected]="blueThemeSelectedFlag" (click)="setTheme(true)"></span>
+    <span class="white-toggle" [class.theme-selected]="!blueThemeSelectedFlag" (click)="setTheme(false)"></span>
   </div>
 </div>
 
