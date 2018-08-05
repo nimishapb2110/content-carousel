@@ -9,6 +9,6 @@ export class DestinationService {
   constructor( private http: HttpClient ) { }
 
   getDestinationList() {
-    return this.http.get<Array<CarouselModel>>('../../assets/mock/destinations.json');
+    return this.http.get<CarouselModel[]>('../../assets/mock/destinations.json');
   }
 }
