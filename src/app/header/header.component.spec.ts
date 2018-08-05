@@ -23,12 +23,12 @@ describe('HeaderComponent', () => {
   });
 
   it('should toggle selection flag to false', inject([], () => {
-    component.setWhiteTheme();
+    component.setTheme(false);
     expect(component.blueThemeSelectedFlag).toBe(false);
   }));
 
   it('should toggle selection flag to true', inject([], () => {
-    component.setBlueTheme();
+    component.setTheme(true);
     expect(component.blueThemeSelectedFlag).toBe(true);
   }));
 });
